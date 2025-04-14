@@ -8,8 +8,8 @@ const neteaseApiList: NeteaseApiData[] = [
     }
   },
   {
-    link: 'https://zmusic.i9mr.com',
-    location: '宿迁',
+    link: 'https://zm.i9mr.com',
+    location: '扬州',
     provider: {
       name: '墨染云',
       link: 'https://i9mr.com'
