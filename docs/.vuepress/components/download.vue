@@ -100,7 +100,9 @@ const giteeLatestRelease = async () => {
     },
     version: data.tag_name,
     release: `https://gitee.com/zmusic-dev/zmusic-server/releases/tag/${data.tag_name}`,
-    download: data.assets.filter((item: any) => item.name).map((item: any) => {
+    download: data.assets.filter((item: any) => {
+      return item.name.endsWith('.jar')
+    }).map((item: any) => {
       return {
         name: item.name,
         link: item.browser_download_url
@@ -135,14 +137,33 @@ const spigotmcLatestVersion = async () => {
 }
 
 onMounted(async () => {
-  let data = await githubLatestRelease()
-  list.value.push(data)
-  data = await githubLatestBuild()
-  list.value.push(data)
-  data = await giteeLatestRelease()
-  list.value.push(data)
-  data = await spigotmcLatestVersion()
-  list.value.push(data)
+  try {
+    const data = await githubLatestRelease()
+    list.value.push(data)
+  } catch (e) {
+    console.error(e)
+  }
+
+  try {
+    const data = await githubLatestBuild()
+    list.value.push(data)
+  } catch (e) {
+    console.error(e)
+  }
+
+  try {
+    const data = await giteeLatestRelease()
+    list.value.push(data)
+  } catch (e) {
+    console.error(e)
+  }
+
+  try {
+    const data = await spigotmcLatestVersion()
+    list.value.push(data)
+  } catch (e) {
+    console.error(e)
+  }
 })
 </script>
 
