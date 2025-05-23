@@ -69,7 +69,7 @@ const githubRunartifacts = async (run: any) => {
   const data = await res.json()
   return data.artifacts.map((item: { name: any; id: any; }) => {
     return {
-      name: `${item.name}.zip (需要登录)`,
+      name: `${item.name}.zip`,
       link: `https://github.com/zmusic-dev/zmusic-server/actions/runs/${run.id}/artifacts/${item.id}`
     }
   })
@@ -85,7 +85,7 @@ const githubLatestBuild = async () => {
       link: 'https://github.com/zmusic-dev/zmusic-server/actions/workflows/dev.yml'
     },
     version: `v4.0.0-dev.${run.head_sha.substring(0, 7)}`,
-    release: run.workflow_url,
+    release: run.html_url,
     download: await githubRunartifacts(run)
   }
 }
