@@ -23,7 +23,7 @@
 本插件需要客户端安装配套 Mod 才能正常播放
 
 - 对于 1.8-1.11 的客户端 请安装 [AudioBuffer](https://www.mcbbs.net/thread-832205-1-1.html) Mod
-- 对于 1.12.2-1.19 的客户端 请安装 [ZMusic](https://github.com/RealHeart/ZMusic-Mod/releases) Mod
+- 对于 1.12.2-1.19 的客户端 请安装 [ZMusic](https://github.com/zmusic-dev/zmusic-server-Mod/releases) Mod
 
 ## BungeeCord 说明
 
@@ -38,7 +38,7 @@
 
 ## 反馈
 
-- 前往 [码云](https://gitee.com/realheart/ZMusic) 或 [Github](https://github.com/RealHeart/ZMusic) 提交 Issues
+- 前往 [码云](https://gitee.com/zmusic-dev/zmusic-server) 或 [Github](https://github.com/zmusic-dev/zmusic-server) 提交 Issues
 - 加入交流群：[1032722724](https://jq.qq.com/?_wv=1027&k=5oIs7cc) 反馈
 
 # 命令

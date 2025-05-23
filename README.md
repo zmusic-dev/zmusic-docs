@@ -15,7 +15,7 @@
 ## 开发
 
 ```shell
-git clone https://github.com/RealHeart/ZMusic-Docs
+git clone https://github.com/zmusic-dev/zmusic-docs
 cd ZMusic-Docs
 pnpm install # 安装依赖
 pnpm dev # 启动开发服务器
@@ -47,14 +47,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ## 贡献者
 
-[![][contrib]](https://github.com/RealHeart/ZMusic-Docs/graphs/contributors)
+[![][contrib]](https://github.com/zmusic-dev/zmusic-docs/graphs/contributors)
 
-[banner]: https://socialify.git.ci/RealHeart/ZMusic-Docs/image?description=1&forks=1&issues=1&language=1&name=1&owner=1&pulls=1&stargazers=1&theme=Auto
+[banner]: https://socialify.git.ci/zmusic-dev/zmusic-docs/image?description=1&forks=1&issues=1&language=1&name=1&owner=1&pulls=1&stargazers=1&theme=Auto
 
 [node]: https://img.shields.io/badge/node-18-blue?style=for-the-badge
 
 [pnpm]: https://img.shields.io/badge/pnpm-7-blue?style=for-the-badge
 
-[license]: https://img.shields.io/github/license/RealHeart/ZMusic-Docs?style=for-the-badge
+[license]: https://img.shields.io/github/license/zmusic-dev/zmusic-docs?style=for-the-badge
 
-[contrib]: https://contrib.rocks/image?repo=RealHeart/ZMusic-Docs
+[contrib]: https://contrib.rocks/image?repo=zmusic-dev/zmusic-docs

@@ -23,7 +23,7 @@ icon: fa-solid fa-signs-post
 ## 下载 Mod
 
 - 对于 1.8-1.11 的客户端 请安装 [AudioBuffer](https://www.mcbbs.net/thread-832205-1-1.html) Mod
-- 对于 1.12.2-1.19 的客户端 请安装 [ZMusic](https://github.com/RealHeart/ZMusic-Mod/releases) Mod
+- 对于 1.12.2-1.19 的客户端 请安装 [ZMusic](https://github.com/zmusic-dev/zmusic-server-Mod/releases) Mod
 
 ## 安装 Mod
 
@@ -32,5 +32,5 @@ icon: fa-solid fa-signs-post
 
 ## 反馈
 
-- 前往[Github](https://github.com/RealHeart/ZMusic) 提交 Issues
+- 前往[Github](https://github.com/zmusic-dev/zmusic-server) 提交 Issues
 - 加入交流群：[1032722724](https://jq.qq.com/?_wv=1027&k=5oIs7cc) 反馈

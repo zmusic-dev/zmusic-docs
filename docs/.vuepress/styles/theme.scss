@@ -13,9 +13,12 @@
   backdrop-filter: blur(16px) !important;
 }
 
-div[class*='language-'],
-.hint-container {
+div[class*='language-'] {
   background: transparent !important;
+  backdrop-filter: blur(16px) !important;
+}
+
+.hint-container {
   backdrop-filter: blur(16px) !important;
 }
 

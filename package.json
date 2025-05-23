@@ -9,15 +9,14 @@
     "preview": "serve docs/.vuepress/dist"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-rc.7",
-    "@vuepress/plugin-redirect": "2.0.0-rc.12",
-    "@vuepress/plugin-register-components": "2.0.0-rc.14",
-    "prettier": "^3.2.5",
-    "serve": "^14.2.1",
-    "vue": "^3.4.19",
-    "vuepress": "2.0.0-rc.7",
-    "vuepress-theme-hope": "2.0.0-rc.23"
+    "@vuepress/bundler-vite": "2.0.0-rc.23",
+    "@vuepress/plugin-register-components": "2.0.0-rc.103",
+    "prettier": "^3.5.3",
+    "serve": "^14.2.4",
+    "vue": "^3.5.14",
+    "vuepress": "2.0.0-rc.23",
+    "vuepress-theme-hope": "2.0.0-rc.88"
   },
   "description": "ZMusic Documentation",
-  "packageManager": "pnpm@8.15.2"
+  "packageManager": "pnpm@10.11.0"
 }

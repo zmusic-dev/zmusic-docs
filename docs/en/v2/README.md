@@ -32,7 +32,7 @@ This is a powerful music system that supports the following functions.
 This plug-in requires the client to install the supporting Mod to play normally
 
 - For 1.8-1.11 clients, please install [AudioBuffer](https://www.mcbbs.net/thread-832205-1-1.html) Mod
-- For 1.12.2-1.19 clients, please install [ZMusic](https://github.com/RealHeart/ZMusic-Mod/releases) Mod
+- For 1.12.2-1.19 clients, please install [ZMusic](https://github.com/zmusic-dev/zmusic-server-Mod/releases) Mod
 
 ## BungeeCord description
 
@@ -46,7 +46,7 @@ This plug-in requires the client to install the supporting Mod to play normally
 
 ## Feedback
 
-- Go to [Gitee](https://gitee.com/realheart/ZMusic) or [Github](https://github.com/RealHeart/ZMusic) to submit Issues
+- Go to [Gitee](https://gitee.com/zmusic-dev/zmusic-server) or [Github](https://github.com/zmusic-dev/zmusic-server) to submit Issues
 - Join the exchange group: [1032722724](https://jq.qq.com/?_wv=1027&k=5oIs7cc) feedback
 
 # Command
@@ -307,9 +307,9 @@ Example: `/zm play bilibili -id:374305`
 
 [java]: https://img.shields.io/badge/java-1.8-blue
 [kotlin]: https://img.shields.io/badge/kotlin-1.5.30-blue
-[license]: https://img.shields.io/github/license/RealHeart/ZMusic?color=blue
+[license]: https://img.shields.io/github/license/zmusic-dev/zmusic-server?color=blue
 [players]: https://img.shields.io/bstats/players/7291
 [servers]: https://img.shields.io/bstats/servers/7291
 [tested-versions]: https://img.shields.io/spiget/tested-versions/83027
-[release]: https://img.shields.io/github/v/release/RealHeart/ZMusic
-[downloads]: https://img.shields.io/github/downloads/RealHeart/ZMusic/total?color=blue
+[release]: https://img.shields.io/github/v/release/zmusic-dev/zmusic-server
+[downloads]: https://img.shields.io/github/downloads/zmusic-dev/zmusic-server/total?color=blue

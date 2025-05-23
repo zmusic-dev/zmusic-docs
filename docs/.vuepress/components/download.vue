@@ -46,12 +46,12 @@ interface DownloadItem {
 const list: Ref<DownloadItem[]> = ref([])
 
 const githubLatestRelease = async () => {
-  const res = await fetch('https://api.github.com/repos/RealHeart/ZMusic/releases/latest')
+  const res = await fetch('https://api.github.com/repos/zmusic-dev/zmusic-server/releases/latest')
   const data = await res.json()
   return {
     source: {
       name: 'Github Releases',
-      link: 'https://github.com/RealHeart/ZMusic/releases'
+      link: 'https://github.com/zmusic-dev/zmusic-server/releases'
     },
     version: data.tag_name,
     release: data.html_url,
@@ -65,24 +65,24 @@ const githubLatestRelease = async () => {
 }
 
 const githubRunartifacts = async (run: any) => {
-  const res = await fetch(`https://api.github.com/repos/RealHeart/ZMusic/actions/runs/${run.id}/artifacts`)
+  const res = await fetch(`https://api.github.com/repos/zmusic-dev/zmusic-server/actions/runs/${run.id}/artifacts`)
   const data = await res.json()
   return data.artifacts.map((item: { name: any; id: any; }) => {
     return {
       name: `${item.name}.zip (需要登录)`,
-      link: `https://github.com/RealHeart/ZMusic/actions/runs/${run.id}/artifacts/${item.id}`
+      link: `https://github.com/zmusic-dev/zmusic-server/actions/runs/${run.id}/artifacts/${item.id}`
     }
   })
 }
 
 const githubLatestBuild = async () => {
-  const res = await fetch('https://api.github.com/repos/RealHeart/ZMusic/actions/workflows/dev.yml/runs?per_page=1')
+  const res = await fetch('https://api.github.com/repos/zmusic-dev/zmusic-server/actions/workflows/dev.yml/runs?per_page=1')
   const data = await res.json()
   const run = data.workflow_runs[0]
   return {
     source: {
       name: 'Github Actions',
-      link: 'https://github.com/RealHeart/ZMusic/actions/workflows/dev.yml'
+      link: 'https://github.com/zmusic-dev/zmusic-server/actions/workflows/dev.yml'
     },
     version: `v4.0.0-dev.${run.head_sha.substring(0, 7)}`,
     release: run.workflow_url,
@@ -91,15 +91,15 @@ const githubLatestBuild = async () => {
 }
 
 const giteeLatestRelease = async () => {
-  const res = await fetch('https://gitee.com/api/v5/repos/RealHeart/ZMusic/releases/latest')
+  const res = await fetch('https://gitee.com/api/v5/repos/zmusic-dev/zmusic-server/releases/latest')
   const data = await res.json()
   return {
     source: {
       name: 'Gitee 发行版',
-      link: 'https://gitee.com/RealHeart/ZMusic/releases'
+      link: 'https://gitee.com/zmusic-dev/zmusic-server/releases'
     },
     version: data.tag_name,
-    release: `https://gitee.com/RealHeart/ZMusic/releases/tag/${data.tag_name}`,
+    release: `https://gitee.com/zmusic-dev/zmusic-server/releases/tag/${data.tag_name}`,
     download: data.assets.filter((item: any) => item.name).map((item: any) => {
       return {
         name: item.name,

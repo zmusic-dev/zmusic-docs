@@ -3,10 +3,10 @@ import { navbarEn, navbarZh } from './navbar'
 import { sidebarEn, sidebarZh } from './sidebar'
 
 export default hopeTheme({
-  iconAssets: 'fontawesome-with-brands',
-  repo: 'RealHeart/ZMusic',
-  docsRepo: 'RealHeart/ZMusic-Docs',
+  repo: 'zmusic-dev/zmusic-server',
+  docsRepo: 'zmusic-dev/zmusic-docs',
   docsDir: 'docs',
+  darkmode: 'enable',
   locales: {
     '/': {
       navbar: navbarZh,
@@ -15,6 +15,16 @@ export default hopeTheme({
     '/en/': {
       navbar: navbarEn,
       sidebar: sidebarEn
+    }
+  },
+  plugins: {
+    icon: {
+      assets: 'fontawesome-with-brands'
+    },
+    redirect: {
+      config: {
+        '/zh-cn/deploy-api/netease-api.html': '/netease-api.html'
+      }
     }
   }
 })
