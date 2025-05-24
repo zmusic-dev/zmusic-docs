@@ -6,7 +6,6 @@ export default hopeTheme({
   repo: 'zmusic-dev/zmusic-server',
   docsRepo: 'zmusic-dev/zmusic-docs',
   docsDir: 'docs',
-  darkmode: 'enable',
   locales: {
     '/': {
       navbar: navbarZh,
