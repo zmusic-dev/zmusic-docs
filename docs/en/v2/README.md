@@ -32,7 +32,7 @@ This is a powerful music system that supports the following functions.
 This plug-in requires the client to install the supporting Mod to play normally
 
 - For 1.8-1.11 clients, please install [AudioBuffer](https://www.mcbbs.net/thread-832205-1-1.html) Mod
-- For 1.12.2-1.19 clients, please install [ZMusic](https://github.com/zmusic-dev/zmusic-server-Mod/releases) Mod
+- For 1.12.2-1.19 clients, please install [ZMusic](https://github.com/zmusic-dev/zmusic-client/releases) Mod
 
 ## BungeeCord description
 
