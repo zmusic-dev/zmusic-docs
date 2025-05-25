@@ -1,6 +1,6 @@
 const neteaseApiList: NeteaseApiData[] = [
   {
-    link: 'https://zm.armoe.cn', // API地址
+    link: 'https://ncm.zhenxin.me', // API地址
     location: '上海', // 位置
     provider: {
       name: '真心', // 提供者名称

@@ -29,7 +29,7 @@ icon: fa-solid fa-music
 # API设置
 [api]
 # 网易云音乐
-netease-link = "https://zm.armoe.cn"
+netease-link = "https://ncm.zhenxin.me"
 ```
 
 ### V2
@@ -42,7 +42,7 @@ netease-link = "https://zm.armoe.cn"
     /// 使用开源项目NeteaseCloudMusicApi
     /// 推荐自行部署，需Node.js环境
     /// 地址: https://github.com/Binaryify/NeteaseCloudMusicApi
-    "netease": "https://zm.armoe.cn"
+    "netease": "https://ncm.zhenxin.me"
   },
 ```
 
@@ -56,8 +56,10 @@ netease-link = "https://zm.armoe.cn"
 1. 获取代码
 
 ```shell
-git clone https://gitlab.com/Binaryify/neteasecloudmusicapi.git
-cd neteasecloudmusicapi
+wget https://registry.npmmirror.com/NeteaseCloudMusicApi/-/NeteaseCloudMusicApi-4.27.0.tgz
+tar -xzvf NeteaseCloudMusicApi-4.27.0.tgz
+mv package NeteaseCloudMusicApi
+cd NeteaseCloudMusicApi
 ```
 
 2. 安装依赖
