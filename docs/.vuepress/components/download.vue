@@ -2,10 +2,12 @@
   <div>
     <table>
       <thead>
-        <th>渠道</th>
-        <th>版本</th>
-        <th>发布</th>
-        <th>下载</th>
+        <tr>
+          <th>渠道</th>
+          <th>版本</th>
+          <th>发布</th>
+          <th>下载</th>
+        </tr>
       </thead>
       <tbody>
         <tr v-for="item in list">

@@ -2,6 +2,7 @@ import { viteBundler } from '@vuepress/bundler-vite'
 import { defineUserConfig } from 'vuepress'
 import { getDirname, path } from 'vuepress/utils'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
+import { umamiAnalyticsPlugin } from '@vuepress/plugin-umami-analytics'
 import theme from './config/theme'
 
 const __dirname = getDirname(import.meta.url)
@@ -17,15 +18,7 @@ export default defineUserConfig({
         content: 'width=device-width,initial-scale=1,user-scalable=no'
       }
     ],
-    [
-      'script',
-      {
-        async: true,
-        src: 'https://umami.zhenxin.me/script.js',
-        'data-website-id': 'a799e189-cf7e-4f5a-ac98-71de364f3637'
-      }
-    ],
-    ['script', { src: 'https://cdn.armoe.cn/static/js/autoGray.js' }]
+    ['script', { src: 'https://cdn.zhenxin.me/static/js/autoGray.js' }]
   ],
   title: 'ZMusic',
   locales: {
@@ -42,6 +35,10 @@ export default defineUserConfig({
   plugins: [
     registerComponentsPlugin({
       componentsDir: path.resolve(__dirname, './components')
+    }),
+    umamiAnalyticsPlugin({
+      id: '16cafa7e-6354-4307-b7b1-b3b3d013b7e2',
+      link: 'https://umami.zhenxin.me/script.js'
     })
   ]
 })

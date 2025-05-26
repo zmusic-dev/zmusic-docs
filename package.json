@@ -11,6 +11,7 @@
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.23",
     "@vuepress/plugin-register-components": "2.0.0-rc.103",
+    "@vuepress/plugin-umami-analytics": "2.0.0-rc.105",
     "prettier": "^3.5.3",
     "serve": "^14.2.4",
     "vue": "^3.5.14",
