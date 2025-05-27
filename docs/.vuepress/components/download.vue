@@ -78,7 +78,7 @@ const githubRunartifacts = async (run: any) => {
 }
 
 const githubLatestBuild = async () => {
-  const res = await fetch('https://api.github.com/repos/zmusic-dev/zmusic-server/actions/workflows/dev.yml/runs?per_page=1')
+  const res = await fetch('https://api.github.com/repos/zmusic-dev/zmusic-server/actions/workflows/dev.yml/runs?per_page=1&status=success')
   const data = await res.json()
   const run = data.workflow_runs[0]
   return {
