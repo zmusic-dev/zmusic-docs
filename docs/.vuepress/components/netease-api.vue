@@ -2,10 +2,12 @@
   <div>
     <table>
       <thead>
-        <th>API 地址</th>
-        <th>位置</th>
-        <th>提供者</th>
-        <th>版本</th>
+        <tr>
+          <th>API 地址</th>
+          <th>位置</th>
+          <th>提供者</th>
+          <th>版本</th>
+        </tr>
       </thead>
       <tbody>
         <tr v-for="(api, index) in neteaseApiList">
@@ -14,7 +16,7 @@
           <td>
             <a target="_blank" :href="api.provider.link">{{
               api.provider.name
-            }}</a>
+              }}</a>
           </td>
 
           <td>
