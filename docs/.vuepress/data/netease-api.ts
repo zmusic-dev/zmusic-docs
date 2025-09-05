@@ -22,6 +22,14 @@ const neteaseApiList: NeteaseApiData[] = [
       name: 'MCSeekeri',
       link: 'https://github.com/MCSeekeri'
     }
+  },
+  {
+    link: 'https://zm.wwoyun.cn',
+    location: '宁波',
+    provider: {
+      name: '蓝钦',
+      link: 'https://github.com/LanQin996'
+    }
   }
 ]
 
