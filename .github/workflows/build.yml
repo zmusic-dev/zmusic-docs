@@ -49,4 +49,6 @@ jobs:
           scp -r -P $port docs/.vuepress/dist/* root@$server:${deployed_dir}/index-new
           ssh root@$server -p $port "rm -rf ${deployed_dir}/index"
           ssh root@$server -p $port "cd ${deployed_dir} && mv index-new index"
+          echo "🔑 设置文件权限..."
+          ssh root@$server -p $port "chown -R 1000:1000 ${deployed_dir}"
           echo "✅ 部署完成！"
