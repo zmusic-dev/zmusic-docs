@@ -41,12 +41,12 @@ jobs:
         run: |
           server="${{ secrets.DEPLOY_SERVER_IP }}"
           port="${{ secrets.DEPLOY_SERVER_PORT }}"
-          deployed_dir="/opt/1panel/www/sites/zmusic.zhenxin.me/index"
+          deployed_dir="/opt/1panel/www/sites/zmusic.zhenxin.me"
           echo "🚀 部署到 $server"
           echo "📁 创建远程目录..."
           ssh root@$server -p $port "mkdir -p ${deployed_dir}"
           echo "📦 上传产物到服务器..."
-          scp -r docs/.vuepress/dist -p $port root@$server:${deployed_dir}/index-new
+          scp -r -P $port docs/.vuepress/dist/* root@$server:${deployed_dir}/index-new
           ssh root@$server -p $port "rm -rf ${deployed_dir}/index"
           ssh root@$server -p $port "cd ${deployed_dir} && mv index-new index"
           echo "✅ 部署完成！"
