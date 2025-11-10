@@ -1,0 +1,54 @@
+name: Build And Deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  COREPACK_NPM_REGISTRY: https://registry.npmmirror.com
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile --registry $COREPACK_NPM_REGISTRY
+
+      - name: Build Project
+        run: pnpm build
+
+      - name: Set up SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          echo -e "LogLevel ERROR\nHost *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+
+      - name: Deploy to Server
+        run: |
+          server="${{ secrets.DEPLOY_SERVER_IP }}"
+          deployed_dir="/opt/1panel/www/sites/zmusic.zhenxin.me/index"
+          echo "🚀 部署到 $server"
+          echo "📁 创建远程目录..."
+          ssh root@$server "mkdir -p ${deployed_dir}"
+          echo "📦 上传产物到服务器..."
+          scp -r docs/.vuepress/dist root@$server:${deployed_dir}/index-new
+          ssh root@$server "rm -rf ${deployed_dir}/index"
+          ssh root@$server "cd ${deployed_dir} && mv index-new index"
+          echo "✅ 部署完成！"
