@@ -37,7 +37,7 @@ export default defineUserConfig({
       componentsDir: path.resolve(__dirname, './components')
     }),
     umamiAnalyticsPlugin({
-      id: '16cafa7e-6354-4307-b7b1-b3b3d013b7e2',
+      id: '275aafc6-4a33-4a94-84d0-43907ab56013',
       link: 'https://umami.zhenxin.me/script.js'
     })
   ]
