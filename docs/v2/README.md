@@ -151,7 +151,7 @@
 
 ### 命令
 
-`/zm palyall [搜索源] [歌名]` 强制全服播放
+`/zm playall [搜索源] [歌名]` 强制全服播放
 `/zm stopAll` 强制停止全服播放
 `/zm reload` 重载配置文件
 
