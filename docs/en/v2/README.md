@@ -58,7 +58,7 @@ The ZMusic plug-in **REQUIRES** the client to install the Zmusic Mod as a depend
 `/zm play` Play music
 `/zm music` All server order songs
 `/zm search` Search for music
-`/zm playlist` Use playlist 
+`/zm playlist` Use playlist
 
 ## Play
 
