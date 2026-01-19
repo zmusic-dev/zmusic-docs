@@ -15,7 +15,7 @@
 
 ZMusic is a powerful music system that supports the following functions.
 
-- Full server music playing 
+- Full server music playing
 - Standalone/Individual song play
 - Lyrics display
 - Lyrics translations display
