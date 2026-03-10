@@ -3,170 +3,173 @@
     <table>
       <thead>
         <tr>
-          <th>渠道</th>
-          <th>版本</th>
-          <th>发布</th>
-          <th>下载</th>
+          <th>{{ t.channel }}</th>
+          <th>{{ t.version }}</th>
+          <th>{{ t.release }}</th>
+          <th>{{ t.download }}</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in list">
+        <tr v-for="item in list" :key="item.source.link">
           <td><a target="_blank" :href="item.source.link">{{ item.source.name }}</a></td>
           <td>{{ item.version }}</td>
-          <td><a target="_blank" :href="item.release">点击查看</a></td>
-          <td>
-            <span v-for="download in item.download">
-              <a target="_blank" :href="download.link">{{ download.name }}</a>
-              <br />
-            </span>
+          <td><a target="_blank" :href="item.release">{{ t.viewRelease }}</a></td>
+          <td class="download-links">
+            <a v-for="dl in item.download" :key="dl.link" target="_blank" :href="dl.link">
+              {{ dl.name }}
+            </a>
           </td>
         </tr>
       </tbody>
     </table>
-    <ul></ul>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { Ref, onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
+import { usePageLang } from 'vuepress/client'
 
-interface DownloadItem {
-  source: {
-    name: string,
-    link: string
+const lang = usePageLang()
+
+const i18n = {
+  '/': {
+    channel: '渠道',
+    version: '版本',
+    release: '发布',
+    download: '下载',
+    viewRelease: '点击查看'
+  },
+  '/en/': {
+    channel: 'Channel',
+    version: 'Version',
+    release: 'Release',
+    download: 'Download',
+    viewRelease: 'View'
   }
-  version: string
-  release: string
-  download: [
-    {
-      name: string,
-      link: string
-    }
-  ]
 }
 
-const list: Ref<DownloadItem[]> = ref([])
+const t = computed(() => i18n[lang.value === 'en-US' ? '/en/' : '/'])
 
-const githubLatestRelease = async () => {
-  const res = await fetch('https://api.github.com/repos/zmusic-dev/zmusic-server/releases/latest')
+interface DownloadFile {
+  name: string
+  link: string
+}
+
+interface DownloadItem {
+  source: { name: string; link: string }
+  version: string
+  release: string
+  download: DownloadFile[]
+}
+
+const list = ref<DownloadItem[]>([])
+
+const safeFetch = async <T,>(fn: () => Promise<T>): Promise<T | null> => {
+  try {
+    return await fn()
+  } catch (e) {
+    console.error(e)
+    return null
+  }
+}
+
+const GITHUB_REPO = 'zmusic-dev/zmusic-server'
+
+const githubLatestRelease = async (): Promise<DownloadItem> => {
+  const res = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/releases/latest`)
   const data = await res.json()
   return {
     source: {
       name: 'Github Releases',
-      link: 'https://github.com/zmusic-dev/zmusic-server/releases'
+      link: `https://github.com/${GITHUB_REPO}/releases`
     },
     version: data.tag_name,
     release: data.html_url,
-    download: data.assets.map((item: any) => {
-      return {
-        name: item.name,
-        link: item.browser_download_url
-      }
-    })
+    download: data.assets.map((item: { name: string; browser_download_url: string }) => ({
+      name: item.name,
+      link: item.browser_download_url
+    }))
   }
 }
 
-const githubRunartifacts = async (run: any) => {
-  const res = await fetch(`https://api.github.com/repos/zmusic-dev/zmusic-server/actions/runs/${run.id}/artifacts`)
-  const data = await res.json()
-  return data.artifacts.map((item: { name: any; id: any; }) => {
-    return {
-      name: `${item.name}.zip`,
-      link: `https://github.com/zmusic-dev/zmusic-server/actions/runs/${run.id}/artifacts/${item.id}`
-    }
-  })
-}
-
-const githubLatestBuild = async () => {
-  const res = await fetch('https://api.github.com/repos/zmusic-dev/zmusic-server/actions/workflows/dev.yml/runs?per_page=1&status=success')
+const githubLatestBuild = async (): Promise<DownloadItem> => {
+  const res = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/actions/workflows/dev.yml/runs?per_page=1&status=success`)
   const data = await res.json()
   const run = data.workflow_runs[0]
+
+  const artifactsRes = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/actions/runs/${run.id}/artifacts`)
+  const artifactsData = await artifactsRes.json()
+
   return {
     source: {
       name: 'Github Actions',
-      link: 'https://github.com/zmusic-dev/zmusic-server/actions/workflows/dev.yml'
+      link: `https://github.com/${GITHUB_REPO}/actions/workflows/dev.yml`
     },
     version: `v4.0.0-dev.${run.head_sha.substring(0, 7)}`,
     release: run.html_url,
-    download: await githubRunartifacts(run)
+    download: artifactsData.artifacts.map((item: { name: string; id: number }) => ({
+      name: `${item.name}.zip`,
+      link: `https://github.com/${GITHUB_REPO}/actions/runs/${run.id}/artifacts/${item.id}`
+    }))
   }
 }
 
-const giteeLatestRelease = async () => {
-  const res = await fetch('https://gitee.com/api/v5/repos/zmusic-dev/zmusic-server/releases/latest')
+const giteeLatestRelease = async (): Promise<DownloadItem> => {
+  const res = await fetch(`https://gitee.com/api/v5/repos/${GITHUB_REPO}/releases/latest`)
   const data = await res.json()
   return {
     source: {
-      name: 'Gitee 发行版',
-      link: 'https://gitee.com/zmusic-dev/zmusic-server/releases'
+      name: 'Gitee',
+      link: `https://gitee.com/${GITHUB_REPO}/releases`
     },
     version: data.tag_name,
-    release: `https://gitee.com/zmusic-dev/zmusic-server/releases/tag/${data.tag_name}`,
-    download: data.assets.filter((item: any) => {
-      return item.name.endsWith('.jar')
-    }).map((item: any) => {
-      return {
+    release: `https://gitee.com/${GITHUB_REPO}/releases/tag/${data.tag_name}`,
+    download: data.assets
+      .filter((item: { name: string }) => item.name.endsWith('.jar'))
+      .map((item: { name: string; browser_download_url: string }) => ({
         name: item.name,
         link: item.browser_download_url
-      }
-    })
+      }))
   }
 }
 
-const spigotmcLatestUpdate = async () => {
-  const res = await fetch('https://api.spiget.org/v2/resources/83027/updates/latest')
-  const data = await res.json()
-  return `https://www.spigotmc.org/resources/83027/update?update=${data.id}`
-}
+const spigotmcLatestVersion = async (): Promise<DownloadItem> => {
+  const [versionRes, updateRes] = await Promise.all([
+    fetch('https://api.spiget.org/v2/resources/83027/versions/latest'),
+    fetch('https://api.spiget.org/v2/resources/83027/updates/latest')
+  ])
+  const versionData = await versionRes.json()
+  const updateData = await updateRes.json()
 
-const spigotmcLatestVersion = async () => {
-  const res = await fetch('https://api.spiget.org/v2/resources/83027/versions/latest')
-  const data = await res.json()
   return {
     source: {
       name: 'SpigotMC',
       link: 'https://www.spigotmc.org/resources/83027/'
     },
-    version: `${data.name}`,
-    release: await spigotmcLatestUpdate(),
-    download: [
-      {
-        name: 'ZMusic Latest',
-        link: `https://www.spigotmc.org/resources/83027/download?version=${data.id}`
-      }
-    ] as any
+    version: versionData.name,
+    release: `https://www.spigotmc.org/resources/83027/update?update=${updateData.id}`,
+    download: [{
+      name: 'ZMusic Latest',
+      link: `https://www.spigotmc.org/resources/83027/download?version=${versionData.id}`
+    }]
   }
 }
 
 onMounted(async () => {
-  try {
-    const data = await githubLatestRelease()
-    list.value.push(data)
-  } catch (e) {
-    console.error(e)
-  }
-
-  try {
-    const data = await githubLatestBuild()
-    list.value.push(data)
-  } catch (e) {
-    console.error(e)
-  }
-
-  try {
-    const data = await giteeLatestRelease()
-    list.value.push(data)
-  } catch (e) {
-    console.error(e)
-  }
-
-  try {
-    const data = await spigotmcLatestVersion()
-    list.value.push(data)
-  } catch (e) {
-    console.error(e)
-  }
+  const results = await Promise.all([
+    safeFetch(githubLatestRelease),
+    safeFetch(githubLatestBuild),
+    safeFetch(giteeLatestRelease),
+    safeFetch(spigotmcLatestVersion)
+  ])
+  list.value = results.filter((item): item is DownloadItem => item !== null)
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.download-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+</style>

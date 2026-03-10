@@ -3,61 +3,76 @@
     <table>
       <thead>
         <tr>
-          <th>API 地址</th>
-          <th>位置</th>
-          <th>提供者</th>
-          <th>版本</th>
+          <th>{{ t.apiUrl }}</th>
+          <th>{{ t.location }}</th>
+          <th>{{ t.provider }}</th>
+          <th>{{ t.version }}</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(api, index) in neteaseApiList">
+        <tr v-for="(api, index) in neteaseApiList" :key="api.link">
           <td>{{ api.link }}</td>
-          <td>{{ api.location }}</td>
+          <td>{{ getLocation(api.location) }}</td>
           <td>
-            <a target="_blank" :href="api.provider.link">{{
-              api.provider.name
-              }}</a>
+            <a target="_blank" :href="api.provider.link">{{ api.provider.name }}</a>
           </td>
-
           <td>
-            <img :src="apiVersions[index]" v-if="!loading" />
+            <img :src="apiVersions[index]" />
           </td>
         </tr>
       </tbody>
     </table>
-    <ul></ul>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
+import { usePageLang } from 'vuepress/client'
 import neteaseApiList from '../data/netease-api'
 
-const loading = ref(true)
-const apiVersions = ref<string[]>([])
+const lang = usePageLang()
 
-const getApiVersion = async (link: string) => {
+const i18n = {
+  '/': {
+    apiUrl: 'API 地址',
+    location: '位置',
+    provider: '提供者',
+    version: '版本'
+  },
+  '/en/': {
+    apiUrl: 'API URL',
+    location: 'Location',
+    provider: 'Provider',
+    version: 'Version'
+  }
+}
+
+const locale = computed(() => lang.value === 'en-US' ? '/en/' : '/')
+
+const t = computed(() => i18n[locale.value])
+
+const getLocation = (location: Record<string, string>) => location[locale.value] || location['/']
+
+const FETCHING_BADGE = 'https://img.shields.io/badge/status-Fetching-lightgray'
+
+const apiVersions = ref<string[]>(neteaseApiList.map(() => FETCHING_BADGE))
+
+const getApiVersion = async (link: string): Promise<string> => {
   try {
     const res = await fetch(`${link}/inner/version`)
     const result = await res.json()
-    const data = result.data
-    const image = `https://img.shields.io/badge/inner-v${data.version}-blue`
-    return image
+    return `https://img.shields.io/badge/inner-v${result.data.version}-blue`
   } catch (e) {
-    const image = `https://img.shields.io/badge/error-${e.message}-red`
-    return image
+    const message = e instanceof Error ? e.message : 'Unknown error'
+    return `https://img.shields.io/badge/error-${encodeURIComponent(message)}-red`
   }
 }
 
 onMounted(async () => {
-  neteaseApiList.forEach(async (api, index) => {
-    apiVersions.value[
-      index
-    ] = `https://img.shields.io/badge/status-Fetching-lightgray`
-    const result = await getApiVersion(api.link)
-    apiVersions.value[index] = result
-  })
-  loading.value = false
+  const results = await Promise.all(
+    neteaseApiList.map(api => getApiVersion(api.link))
+  )
+  apiVersions.value = results
 })
 </script>
 
