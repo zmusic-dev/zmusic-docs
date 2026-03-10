@@ -31,7 +31,7 @@ import { usePageLang } from 'vuepress/client'
 
 const lang = usePageLang()
 
-const i18n = {
+const i18n: Record<string, { channel: string; version: string; release: string; download: string; viewRelease: string }> = {
   '/': {
     channel: '渠道',
     version: '版本',
@@ -45,10 +45,33 @@ const i18n = {
     release: 'Release',
     download: 'Download',
     viewRelease: 'View'
+  },
+  '/zh-tw/': {
+    channel: '管道',
+    version: '版本',
+    release: '發布',
+    download: '下載',
+    viewRelease: '點擊查看'
+  },
+  '/ja/': {
+    channel: 'チャンネル',
+    version: 'バージョン',
+    release: 'リリース',
+    download: 'ダウンロード',
+    viewRelease: '表示'
   }
 }
 
-const t = computed(() => i18n[lang.value === 'en-US' ? '/en/' : '/'])
+const getLocale = () => {
+  if (lang.value === 'en-US') return '/en/'
+  if (lang.value === 'zh-TW') return '/zh-tw/'
+  if (lang.value === 'ja-JP') return '/ja/'
+  return '/'
+}
+
+const locale = computed(() => getLocale())
+
+const t = computed(() => i18n[locale.value])
 
 interface DownloadFile {
   name: string

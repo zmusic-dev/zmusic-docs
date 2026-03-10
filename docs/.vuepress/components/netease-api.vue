@@ -32,7 +32,7 @@ import neteaseApiList from '../data/netease-api'
 
 const lang = usePageLang()
 
-const i18n = {
+const i18n: Record<string, { apiUrl: string; location: string; provider: string; version: string }> = {
   '/': {
     apiUrl: 'API 地址',
     location: '位置',
@@ -44,10 +44,29 @@ const i18n = {
     location: 'Location',
     provider: 'Provider',
     version: 'Version'
+  },
+  '/zh-tw/': {
+    apiUrl: 'API 位址',
+    location: '位置',
+    provider: '提供者',
+    version: '版本'
+  },
+  '/ja/': {
+    apiUrl: 'API URL',
+    location: '場所',
+    provider: '提供者',
+    version: 'バージョン'
   }
 }
 
-const locale = computed(() => lang.value === 'en-US' ? '/en/' : '/')
+const getLocale = () => {
+  if (lang.value === 'en-US') return '/en/'
+  if (lang.value === 'zh-TW') return '/zh-tw/'
+  if (lang.value === 'ja-JP') return '/ja/'
+  return '/'
+}
+
+const locale = computed(() => getLocale())
 
 const t = computed(() => i18n[locale.value])
 

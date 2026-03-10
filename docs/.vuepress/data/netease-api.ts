@@ -3,7 +3,9 @@ const neteaseApiList: NeteaseApiData[] = [
     link: 'https://ncm.zhenxin.me',
     location: {
       '/': '上海',
-      '/en/': 'Shanghai'
+      '/en/': 'Shanghai',
+      '/zh-tw/': '上海',
+      '/ja/': '上海'
     },
     provider: {
       name: '真心',
@@ -14,7 +16,9 @@ const neteaseApiList: NeteaseApiData[] = [
     link: 'https://zm.i9mr.com',
     location: {
       '/': '扬州',
-      '/en/': 'Yangzhou'
+      '/en/': 'Yangzhou',
+      '/zh-tw/': '揚州',
+      '/ja/': '揚州'
     },
     provider: {
       name: '墨染云',
@@ -25,7 +29,9 @@ const neteaseApiList: NeteaseApiData[] = [
     link: 'https://music.mcseekeri.com',
     location: {
       '/': '美国',
-      '/en/': 'USA'
+      '/en/': 'USA',
+      '/zh-tw/': '美國',
+      '/ja/': 'アメリカ'
     },
     provider: {
       name: 'MCSeekeri',
@@ -36,7 +42,9 @@ const neteaseApiList: NeteaseApiData[] = [
     link: 'https://zm.wwoyun.cn',
     location: {
       '/': '宁波',
-      '/en/': 'Ningbo'
+      '/en/': 'Ningbo',
+      '/zh-tw/': '寧波',
+      '/ja/': '寧波'
     },
     provider: {
       name: '蓝钦',

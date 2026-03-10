@@ -22,4 +22,26 @@ const navbarEn = navbar([
   }
 ])
 
-export { navbarZh, navbarEn }
+const navbarZhTw = navbar([
+  { text: '首頁', link: '/zh-tw/', icon: 'home' },
+  { text: '指南', link: '/zh-tw/guide/README.md', icon: 'lightbulb' },
+  { text: '常見問題', link: '/zh-tw/faq.md', icon: 'circle-question' },
+  {
+    text: 'Discord',
+    link: 'https://discord.gg/twQgJNufYn',
+    icon: 'fa-brands fa-discord'
+  }
+])
+
+const navbarJa = navbar([
+  { text: 'ホーム', link: '/ja/', icon: 'home' },
+  { text: 'ガイド', link: '/ja/guide/README.md', icon: 'lightbulb' },
+  { text: 'よくある質問', link: '/ja/faq.md', icon: 'circle-question' },
+  {
+    text: 'Discord',
+    link: 'https://discord.gg/twQgJNufYn',
+    icon: 'fa-brands fa-discord'
+  }
+])
+
+export { navbarZh, navbarEn, navbarZhTw, navbarJa }

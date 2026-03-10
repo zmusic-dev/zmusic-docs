@@ -35,6 +35,16 @@ export default defineUserConfig({
       title: 'ZMusic Docs',
       lang: 'en-US',
       description: 'ZMusic - Versatile, easy-to-use cross-platform music player plugin for Minecraft'
+    },
+    '/zh-tw/': {
+      title: 'ZMusic 使用文件',
+      lang: 'zh-TW',
+      description: 'ZMusic - 多功能、易上手的 Minecraft 跨平台點歌插件'
+    },
+    '/ja/': {
+      title: 'ZMusic ドキュメント',
+      lang: 'ja-JP',
+      description: 'ZMusic - 多機能で使いやすい Minecraft クロスプラットフォーム音楽再生プラグイン'
     }
   },
   theme,
