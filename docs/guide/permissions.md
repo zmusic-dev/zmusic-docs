@@ -3,8 +3,10 @@ title: 权限
 icon: fa-solid fa-shield-halved
 ---
 
-::: warning
-**您当前正在查看的文档为 V4 版本文档**<br>
-**此版本仍在开发中，可能存在错误或不完善的地方**<br>
-**当前长期支持版本为 V2，您可以查看 [V2 文档](/v2/README.md)**
+<v4-warning />
+
+::: info
+该功能正在开发中，敬请期待。
+
+如需配置权限，请查看 [V2 权限文档](/v2/README.md#权限)。
 :::
