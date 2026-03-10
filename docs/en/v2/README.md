@@ -1,3 +1,8 @@
+---
+title: V2 Docs
+icon: fa-solid fa-book
+---
+
 # V2 Usage Docs
 
 ![][java]
@@ -47,7 +52,7 @@ The ZMusic plug-in **REQUIRES** the client to install the Zmusic Mod as a depend
 ## Feedback
 
 - Go to [Gitee](https://gitee.com/zmusic-dev/zmusic-server) or [Github](https://github.com/zmusic-dev/zmusic-server) to submit Issues
-- Join the QQ group: [1032722724](https://jq.qq.com/?_wv=1027&k=5oIs7cc) for feedback
+- Join our Discord: [https://discord.gg/twQgJNufYn](https://discord.gg/twQgJNufYn)
 
 # Command
 
@@ -82,7 +87,7 @@ Search for any music by song name, the search will return 10 options, then click
 
 `/zm music [search source] [song name]`
 
-[Search source description](#Search source description) [Song name ID description](#歌名ID化说明)
+[Search source description](#Search source description) [Song name ID description](#song-name-id-description)
 
 ### Example
 
@@ -96,7 +101,7 @@ Search for a music by song name, return a list of ten music
 
 `/zm search [search source] [song title]`
 
-[Search source description](#Search source description) [Song name ID description](#歌名ID化说明)
+[Search source description](#Search source description) [Song name ID description](#song-name-id-description)
 
 ### Example
 
@@ -162,7 +167,7 @@ Administrator-related operations, full server mandatory playback, reload configu
 `/zm stopAll` Force stop all server playback
 `/zm reload` reload configuration file
 
-[Search source description](#Search source description) [Song name ID description](#歌名ID化说明)
+[Search source description](#Search source description) [Song name ID description](#song-name-id-description)
 
 ### Example
 
@@ -182,81 +187,69 @@ Administrator-related operations, full server mandatory playback, reload configu
 
 ```json
 {
-  /// Configuration file version (do not modify)
-  "version": 9,
-  /// Whether to automatically download plugin updates
-  "update": false,
-  /// Plug-in prompt message display prefix
+  // Configuration file version (do not modify)
+  "version": 11,
+  // Whether to check for updates
+  "check-update": true,
+  // Plug-in prompt message display prefix
   "prefix": "&bZMusic &e>>> &r",
-  /// Whether to enable debugging mode
+  // Whether to enable debugging mode
   "debug": false,
-  /// API settings
+  // API settings
   "api": {
-    /// NetEase Cloud Music API address
-    ///
-    /// Use the open source project NeteaseCloudMusicApi
-    /// Self-deployment is recommended, Node.js environment is required
-    /// Address: https://github.com/Binaryify/NeteaseCloudMusicApi
-    "netease": "https://netease.api.zhenxin.xyz/"
+    // NetEase Cloud Music API address
+    //
+    // Use the open source project NeteaseCloudMusicApi
+    // Self-deployment is recommended, Node.js environment is required
+    // Address: https://github.com/Binaryify/NeteaseCloudMusicApi
+    "netease": "https://ncm.zhenxin.me/"
   },
-  /// Account Settings
-  "account": {
-    /// NetEase Cloud Music
-    /// Please use /zm login to login your account.
-    "netease": {
-      /// Whether to follow the author's NetEase Cloud Music account
-      "follow": true
-    },
-    /// Bilibili
-    "bilibili": {
-      /// Because Bilibili is m4a audio format
-      /// The server is required for conversion
-      /// So Bilibili playback function charges 5 yuan/permanent
-      /// Contact the author for authorization
-      ///
-      /// Authorize QQ
-      "qq": "1307993674",
-      /// Authorization Key
-      "key": "none"
-    }
+  // Whether to follow the author's NetEase Cloud Music account
+  "netease-follow": true,
+  // ZMusic VIP settings
+  "vip": {
+    // Authorized account
+    "account": "",
+    // Authorization key
+    "secret": ""
   },
-  /// VOD settings
+  // VOD settings
   "music": {
-    /// Gold coins deducted from song (set to 0, no deduction)
-    /// Players with zmusic.bypass ignore the deduction
+    // Gold coins deducted from song (set to 0, no deduction)
+    // Players with zmusic.bypass ignore the deduction
     "money": 10,
-    /// The cooling time of song (set to 0, no cooling)
-    /// Players with zmusic.bypass ignore the cooldown
+    // The cooling time of song (set to 0, no cooling)
+    // Players with zmusic.bypass ignore the cooldown
     "cooldown": 5
   },
-  /// Lyrics settings
+  // Lyrics settings
   "lyric": {
-    /// Whether to enable lyrics
+    // Whether to enable lyrics
     "enable": true,
-    /// Whether to display lyrics translation
+    // Whether to display lyrics translation
     "showLyricTr": true,
-    /// Lyric color
+    // Lyric color
     "color": "&b",
-    /// The following are display mode settings, which can be enabled at the same time
-    /// Whether to use BossBar to display lyrics (1.8 and below are not supported)
+    // The following are display mode settings, which can be enabled at the same time
+    // Whether to use BossBar to display lyrics (1.8 and below are not supported)
     "bossBar": true,
-    /// Whether to use ActionBar to display lyrics
+    // Whether to use ActionBar to display lyrics
     "actionBar": false,
-    /// Whether to use Title to display lyrics
+    // Whether to use Title to display lyrics
     "subTitle": false,
-    /// Whether to use chat information to display lyrics
+    // Whether to use chat information to display lyrics
     "chatMessage": false,
-    /// Hud settings (only support 1.12 and above)
+    // Hud settings (only support 1.12 and above)
     "hud": {
-      /// Whether to enable Hud
+      // Whether to enable Hud
       "enable": true,
-      /// X coordinate of information
+      // X coordinate of information
       "infoX": 2,
-      /// Y coordinate of information
+      // Y coordinate of information
       "infoY": 12,
-      /// X coordinate of lyrics
+      // X coordinate of lyrics
       "lyricX": 2,
-      /// The Y coordinate of the lyrics
+      // The Y coordinate of the lyrics
       "lyricY": 72
     }
   }
@@ -299,7 +292,7 @@ Currently supports the following platforms
 - kuwo / Kuwo Music
 - bilibili / Bilibili Music
 
-# Song name ID description
+# Song Name ID Description
 
 Replace the song name with `-id:music ID`
 This plugin currently supports: Netease Music, Kuwo Music, Bilibili Music
