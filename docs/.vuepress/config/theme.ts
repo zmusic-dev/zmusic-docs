@@ -6,6 +6,8 @@ export default hopeTheme({
   repo: 'zmusic-dev/zmusic-server',
   docsRepo: 'zmusic-dev/zmusic-docs',
   docsDir: 'docs',
+  toc: false,
+  copyright: `&copy;${new Date().getFullYear()} <a href="https://zhenxin.me" target="_blank">ZhenXin</a> All Rights Reserved.`,
   locales: {
     '/': {
       navbar: navbarZh,
@@ -24,6 +26,21 @@ export default hopeTheme({
       config: {
         '/zh-cn/deploy-api/netease-api.html': '/netease-api.html'
       }
+    },
+    // 本地搜索
+    slimsearch: {
+      isSearchable: (page) => page.path !== '/',
+      locales: {
+        '/': {
+          placeholder: '搜索文档'
+        },
+        '/en/': {
+          placeholder: 'Search docs'
+        }
+      }
+    },
+    sitemap: {
+      hostname: 'https://zmusic.zhenxin.me'
     }
   }
 })

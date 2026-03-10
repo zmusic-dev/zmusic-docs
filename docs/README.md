@@ -23,5 +23,4 @@ features:
     details: 完善的新手引导，让你使用的如鱼得水
     icon: credit-card
 footer: '<a href="https://beian.miit.gov.cn" target="_blank">辽ICP备19016520号-4</a>'
-copyright: '&copy;2024 <a href="https://zhenxin.me" target="_blank">ZhenXin</a> All Rights Reserved.'
 ---

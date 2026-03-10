@@ -8,7 +8,7 @@ const sidebarZh = sidebar({
   '/': [
     {
       text: '指南',
-      prefix: 'guide',
+      prefix: 'guide/',
       link: 'guide/README.md',
       icon: 'lightbulb',
       children: childrens.guide
@@ -27,13 +27,23 @@ const sidebarZh = sidebar({
 })
 
 const sidebarEn = sidebar({
-  '/': [
+  '/en/': [
     {
       text: 'Guide',
-      prefix: 'guide',
-      link: '/en/guide/README.md',
+      prefix: 'guide/',
+      link: 'guide/README.md',
       icon: 'lightbulb',
       children: childrens.guide
+    },
+    {
+      text: 'FAQ',
+      link: 'faq.md',
+      icon: 'circle-question',
+    },
+    {
+      text: 'Netease Cloud Music API',
+      link: 'netease-api.md',
+      icon: 'fa-solid fa-music',
     }
   ]
 })

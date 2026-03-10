@@ -18,17 +18,22 @@ export default defineUserConfig({
         content: 'width=device-width,initial-scale=1,user-scalable=no'
       }
     ],
-    ['script', { src: 'https://cdn.zhenxin.me/static/js/autoGray.js' }]
+    ['script', { src: 'https://cdn.zhenxin.me/static/js/autoGray.js' }],
+    ['meta', { name: 'author', content: 'ZhenXin' }],
+    ['meta', { name: 'keywords', content: 'ZMusic, Minecraft, Plugin, Music, 点歌插件, 网易云音乐, BungeeCord, Spigot, Velocity' }],
+    ['meta', { name: 'description', content: 'ZMusic - 多功能、易上手的 Minecraft 跨平台点歌插件，支持 Spigot、BungeeCord、Velocity' }]
   ],
   title: 'ZMusic',
   locales: {
     '/': {
       title: 'ZMusic 使用文档',
-      lang: 'zh-CN'
+      lang: 'zh-CN',
+      description: 'ZMusic - 多功能、易上手的 Minecraft 跨平台点歌插件'
     },
     '/en/': {
       title: 'ZMusic Docs',
-      lang: 'en-US'
+      lang: 'en-US',
+      description: 'ZMusic - Versatile, easy-to-use cross-platform music player plugin for Minecraft'
     }
   },
   theme,
@@ -37,7 +42,7 @@ export default defineUserConfig({
       componentsDir: path.resolve(__dirname, './components')
     }),
     umamiAnalyticsPlugin({
-      id: '275aafc6-4a33-4a94-84d0-43907ab56013',
+      id: 'c5a252ad-badb-488e-80c8-81c366119027',
       link: 'https://umami.zhenxin.me/script.js'
     })
   ]

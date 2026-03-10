@@ -13,14 +13,13 @@ actions:
   - text: View V2 Docs
     link: /en/v2/README.md
 features:
-  - title: cross-platform
-    details: Supported Spigot、BungeeCord、Velocity
+  - title: Cross-Platform
+    details: Supports Spigot, BungeeCord, Velocity
     icon: object-group
-  - title: easy-to-use
-    details: Comprehensive command prompts, easy to use
+  - title: Easy to Use
+    details: Comprehensive command prompts, simple and intuitive
     icon: wand-magic-sparkles
-  - title: easy get started
-    details: Well-documented instructions, so you can use it like a fish out of water!
+  - title: Beginner Friendly
+    details: Well-documented instructions to get you started quickly
     icon: credit-card
-copyright: '&copy;2024 <a href="https://zhenxin.me" target="_blank">ZhenXin</a> All Rights Reserved.'
 ---
