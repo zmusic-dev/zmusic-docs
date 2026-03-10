@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.26",
+    "@vuepress/plugin-llms": "2.0.0-rc.125",
     "@vuepress/plugin-register-components": "2.0.0-rc.125",
     "@vuepress/plugin-slimsearch": "2.0.0-rc.124",
     "@vuepress/plugin-umami-analytics": "2.0.0-rc.125",

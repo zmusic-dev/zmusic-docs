@@ -3,6 +3,7 @@ import { defineUserConfig } from 'vuepress'
 import { getDirname, path } from 'vuepress/utils'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { umamiAnalyticsPlugin } from '@vuepress/plugin-umami-analytics'
+import { llmsPlugin } from '@vuepress/plugin-llms'
 import theme from './config/theme'
 
 const __dirname = getDirname(import.meta.url)
@@ -44,6 +45,10 @@ export default defineUserConfig({
     umamiAnalyticsPlugin({
       id: 'c5a252ad-badb-488e-80c8-81c366119027',
       link: 'https://umami.zhenxin.me/script.js'
+    }),
+    llmsPlugin({
+      domain: 'https://zmusic.zhenxin.me',
+      locale: 'all'
     })
   ]
 })
