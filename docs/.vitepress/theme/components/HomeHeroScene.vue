@@ -1,5 +1,5 @@
 <template>
-  <div :class="['hero-scene', isDark ? 'hero-scene--dark' : 'hero-scene--light']" aria-hidden="true">
+  <div class="hero-scene" aria-hidden="true">
     <div class="hero-scene__glow hero-scene__glow--primary" />
     <div class="hero-scene__glow hero-scene__glow--secondary" />
     <div class="hero-scene__glow hero-scene__glow--accent" />
@@ -35,29 +35,18 @@
 
     <div class="hero-scene__frame">
       <div class="hero-scene__frame-shine" />
-      <img
-        v-show="isDark"
-        class="hero-scene__image hero-scene__image--dark"
-        :src="heroImageDarkSrc"
-        alt=""
-      />
-      <img
-        v-show="!isDark"
-        class="hero-scene__image hero-scene__image--light"
-        :src="heroImageLightSrc"
-        alt=""
-      />
+      <img class="hero-scene__image hero-scene__image--dark" :src="heroImageDarkSrc" alt="" />
+      <img class="hero-scene__image hero-scene__image--light" :src="heroImageLightSrc" alt="" />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useData, useRoute, withBase } from 'vitepress'
+import { useRoute, withBase } from 'vitepress'
 import { getSiteLocale } from '../utils/locale'
 
 const route = useRoute()
-const { isDark } = useData()
 const heroImageDarkSrc = withBase('/images/hero-zmusic.svg')
 const heroImageLightSrc = withBase('/images/hero-zmusic-light.svg')
 
@@ -219,6 +208,18 @@ const t = computed(() => copy[locale.value])
   transform: translateZ(18px) scale(1.04);
 }
 
+.hero-scene__image--light {
+  display: none;
+}
+
+:global(html:not(.dark) .hero-scene__image--dark) {
+  display: none;
+}
+
+:global(html:not(.dark) .hero-scene__image--light) {
+  display: block;
+}
+
 .hero-scene__pill,
 .hero-scene__card {
   z-index: 2;
@@ -337,31 +338,31 @@ const t = computed(() => copy[locale.value])
   white-space: nowrap;
 }
 
-.hero-scene--light .hero-scene__glow--primary {
+:global(html:not(.dark) .hero-scene__glow--primary) {
   background:
     radial-gradient(circle at 30% 30%, rgba(124, 199, 255, 0.78), rgba(0, 136, 255, 0.08) 68%, transparent 78%);
 }
 
-.hero-scene--light .hero-scene__glow--secondary {
+:global(html:not(.dark) .hero-scene__glow--secondary) {
   background:
     radial-gradient(circle at 50% 50%, rgba(0, 136, 255, 0.46), rgba(0, 136, 255, 0.04) 64%, transparent 78%);
 }
 
-.hero-scene--light .hero-scene__glow--accent {
+:global(html:not(.dark) .hero-scene__glow--accent) {
   background:
     radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.96), rgba(124, 199, 255, 0.04) 60%, transparent 78%);
 }
 
-.hero-scene--light .hero-scene__orbit {
+:global(html:not(.dark) .hero-scene__orbit) {
   border-color: rgba(0, 136, 255, 0.18);
   background: rgba(255, 255, 255, 0.14);
 }
 
-.hero-scene--light .hero-scene__orbit--outer {
+:global(html:not(.dark) .hero-scene__orbit--outer) {
   box-shadow: inset 0 0 0 1px rgba(0, 136, 255, 0.08);
 }
 
-.hero-scene--light .hero-scene__frame {
+:global(html:not(.dark) .hero-scene__frame) {
   background:
     linear-gradient(155deg, rgba(255, 255, 255, 0.56), rgba(226, 239, 255, 0.2)),
     radial-gradient(circle at 18% 12%, rgba(124, 199, 255, 0.32), transparent 34%);
@@ -372,26 +373,26 @@ const t = computed(() => copy[locale.value])
     inset 0 1px 0 rgba(255, 255, 255, 0.72);
 }
 
-.hero-scene--light .hero-scene__frame::before {
+:global(html:not(.dark) .hero-scene__frame::before) {
   background:
     linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.62) 35%, transparent 62%),
     radial-gradient(circle at 78% 20%, rgba(255, 255, 255, 0.52), transparent 30%);
 }
 
-.hero-scene--light .hero-scene__frame::after {
+:global(html:not(.dark) .hero-scene__frame::after) {
   border-color: rgba(0, 136, 255, 0.08);
 }
 
-.hero-scene--light .hero-scene__frame-shine {
+:global(html:not(.dark) .hero-scene__frame-shine) {
   opacity: 0.56;
 }
 
-.hero-scene--light .hero-scene__image {
+:global(html:not(.dark) .hero-scene__image) {
   filter: drop-shadow(0 18px 36px rgba(0, 136, 255, 0.16));
 }
 
-.hero-scene--light .hero-scene__pill,
-.hero-scene--light .hero-scene__card {
+:global(html:not(.dark) .hero-scene__pill),
+:global(html:not(.dark) .hero-scene__card) {
   border-color: rgba(0, 136, 255, 0.16);
   background: rgba(255, 255, 255, 0.28);
   box-shadow:
@@ -400,11 +401,11 @@ const t = computed(() => copy[locale.value])
   color: rgba(15, 23, 42, 0.88);
 }
 
-.hero-scene--light .hero-scene__card-label {
+:global(html:not(.dark) .hero-scene__card-label) {
   color: rgba(30, 58, 90, 0.7);
 }
 
-.hero-scene--light .hero-scene__chips span {
+:global(html:not(.dark) .hero-scene__chips span) {
   background: rgba(255, 255, 255, 0.42);
   border-color: rgba(0, 136, 255, 0.1);
   color: rgba(30, 58, 90, 0.88);
