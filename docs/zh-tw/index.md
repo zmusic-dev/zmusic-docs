@@ -5,9 +5,6 @@ title: 首頁
 hero:
   name: ZMusic 使用文件
   tagline: 多功能、易上手的 Minecraft 跨平台點歌插件
-  image:
-    src: /images/hero-zmusic.svg
-    alt: ZMusic
   actions:
     - theme: brand
       text: 查看 V4 文件

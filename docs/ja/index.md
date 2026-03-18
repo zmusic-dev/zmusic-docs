@@ -5,9 +5,6 @@ title: ホーム
 hero:
   name: ZMusic ドキュメント
   tagline: 多機能で使いやすい Minecraft クロスプラットフォーム音楽再生プラグイン
-  image:
-    src: /images/hero-zmusic.svg
-    alt: ZMusic
   actions:
     - theme: brand
       text: V4 ドキュメントを見る

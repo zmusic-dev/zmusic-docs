@@ -35,7 +35,18 @@
 
     <div class="hero-scene__frame">
       <div class="hero-scene__frame-shine" />
-      <img class="hero-scene__image" :src="heroImageSrc" alt="" />
+      <img
+        v-show="isDark"
+        class="hero-scene__image hero-scene__image--dark"
+        :src="heroImageDarkSrc"
+        alt=""
+      />
+      <img
+        v-show="!isDark"
+        class="hero-scene__image hero-scene__image--light"
+        :src="heroImageLightSrc"
+        alt=""
+      />
     </div>
   </div>
 </template>
@@ -47,9 +58,8 @@ import { getSiteLocale } from '../utils/locale'
 
 const route = useRoute()
 const { isDark } = useData()
-const heroImageSrc = computed(() =>
-  withBase(isDark.value ? '/images/hero-zmusic.svg' : '/images/hero-zmusic-light.svg')
-)
+const heroImageDarkSrc = withBase('/images/hero-zmusic.svg')
+const heroImageLightSrc = withBase('/images/hero-zmusic-light.svg')
 
 const copy = {
   '/': {

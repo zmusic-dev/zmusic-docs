@@ -5,9 +5,6 @@ title: Home
 hero:
   name: ZMusic Docs
   tagline: Versatile, easy-to-use cross-platform music player plugin for Minecraft
-  image:
-    src: /images/hero-zmusic.svg
-    alt: ZMusic
   actions:
     - theme: brand
       text: View V4 Docs
