@@ -213,7 +213,7 @@ export default defineConfig({
   },
   themeConfig: {
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/zmusic-dev/zmusic-docs' }
+      { icon: 'github', link: 'https://github.com/zmusic-dev/zmusic-server' }
     ],
     search: {
       provider: 'local',
@@ -285,7 +285,10 @@ export default defineConfig({
         logoLink: withLocaleBase('root'),
         nav: zhNav,
         sidebar: zhSidebar,
-        outline: false,
+        outline: {
+          level: [2, 3],
+          label: '目录'
+        },
         docFooter: {
           prev: '上一页',
           next: '下一页'
@@ -293,6 +296,10 @@ export default defineConfig({
         lastUpdated: {
           text: '最后更新于'
         },
+        returnToTopLabel: '返回顶部',
+        sidebarMenuLabel: '菜单',
+        darkModeSwitchLabel: '主题',
+        langMenuLabel: '切换语言',
         footer: siteFooter
       }
     },
@@ -306,7 +313,10 @@ export default defineConfig({
         logoLink: withLocaleBase('en'),
         nav: enNav,
         sidebar: enSidebar,
-        outline: false,
+        outline: {
+          level: [2, 3],
+          label: 'On this page'
+        },
         docFooter: {
           prev: 'Previous page',
           next: 'Next page'
@@ -314,6 +324,10 @@ export default defineConfig({
         lastUpdated: {
           text: 'Last updated'
         },
+        returnToTopLabel: 'Return to top',
+        sidebarMenuLabel: 'Menu',
+        darkModeSwitchLabel: 'Theme',
+        langMenuLabel: 'Change language',
         footer: siteFooter
       }
     },
@@ -327,7 +341,10 @@ export default defineConfig({
         logoLink: withLocaleBase('zh-tw'),
         nav: zhTwNav,
         sidebar: zhTwSidebar,
-        outline: false,
+        outline: {
+          level: [2, 3],
+          label: '目錄'
+        },
         docFooter: {
           prev: '上一頁',
           next: '下一頁'
@@ -335,6 +352,10 @@ export default defineConfig({
         lastUpdated: {
           text: '最後更新於'
         },
+        returnToTopLabel: '返回頂部',
+        sidebarMenuLabel: '選單',
+        darkModeSwitchLabel: '主題',
+        langMenuLabel: '切換語言',
         footer: siteFooter
       }
     },
@@ -348,7 +369,10 @@ export default defineConfig({
         logoLink: withLocaleBase('ja'),
         nav: jaNav,
         sidebar: jaSidebar,
-        outline: false,
+        outline: {
+          level: [2, 3],
+          label: '目次'
+        },
         docFooter: {
           prev: '前のページ',
           next: '次のページ'
@@ -356,6 +380,10 @@ export default defineConfig({
         lastUpdated: {
           text: '最終更新'
         },
+        returnToTopLabel: 'トップに戻る',
+        sidebarMenuLabel: 'メニュー',
+        darkModeSwitchLabel: 'テーマ',
+        langMenuLabel: '言語を切り替え',
         footer: siteFooter
       }
     }
