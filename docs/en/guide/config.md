@@ -1,11 +1,12 @@
 ---
 title: Configuration
-icon: fa-solid fa-gear
 ---
 
-<v4-warning />
+# Configuration
 
-For TOML specification, please refer to [toml.io](https://toml.io/en/)
+<V4Warning />
+
+For the TOML specification, please refer to [toml.io](https://toml.io/en/).
 
 ```toml
 # Enable debug mode
@@ -30,7 +31,7 @@ netease-link = "https://ncm.zhenxin.me"
 [vip]
 # Authorized QQ
 qq = ""
-# Authorization Key
+# Authorization key
 key = ""
 
 # Proxy settings

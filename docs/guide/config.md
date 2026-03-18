@@ -1,9 +1,10 @@
 ---
 title: 配置文件
-icon: fa-solid fa-gear
 ---
 
-<v4-warning />
+# 配置文件
+
+<V4Warning />
 
 TOML 规范说明请参考 [toml.io](https://toml.io/cn/)
 

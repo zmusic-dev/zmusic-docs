@@ -1,9 +1,8 @@
 ---
 title: 網易雲音樂 API
-icon: fa-solid fa-music
 ---
 
-- [專案地址](https://gitlab.com/Binaryify/neteasecloudmusicapi)
+# 網易雲音樂 API
 
 ## 公共伺服器
 
@@ -13,7 +12,7 @@ icon: fa-solid fa-music
 **因使用公共伺服器所導致的盜號等問題，概不負責。**
 :::
 
-<netease-api />
+<NeteaseApiTable />
 
 ::: warning
 如果遇到自建 API 無法登入的問題。

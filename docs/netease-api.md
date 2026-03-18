@@ -1,9 +1,8 @@
 ---
 title: 网易云音乐 API
-icon: fa-solid fa-music
 ---
 
-- [项目地址](https://gitlab.com/Binaryify/neteasecloudmusicapi)
+# 网易云音乐 API
 
 ## 公共服务器
 
@@ -13,12 +12,12 @@ icon: fa-solid fa-music
 **因使用公共服务器所导致的盗号等问题，概不负责。**
 :::
 
-<netease-api />
+<NeteaseApiTable />
 
 ::: warning
 如果遇到自建 API 无法登录的问题。
 
-请确保您遵循了下方的部署指南，并且将登陆方式改为邮箱登录。
+请确保您遵循了下方的部署指南，并且将登录方式改为邮箱登录。
 :::
 
 ## 替换位置

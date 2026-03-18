@@ -1,12 +1,13 @@
 ---
 title: Commands
-icon: fa-solid fa-terminal
 ---
 
-<v4-warning />
+# Commands
+
+<V4Warning />
 
 ::: info
-This feature is under development, please stay tuned.
+This feature is still under development.
 
-To use command features, please refer to [V2 Command Documentation](/en/v2/#commands).
+For command usage, please refer to the [V2 command documentation](/en/v2/#command).
 :::

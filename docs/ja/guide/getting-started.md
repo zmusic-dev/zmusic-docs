@@ -1,15 +1,16 @@
 ---
 title: はじめに
-icon: fa-solid fa-signs-post
 ---
 
-<v4-warning />
+# はじめに
+
+<V4Warning />
 
 ## ダウンロード
 
 以下のチャンネルから最新版の ZMusic プラグイン/Mod をダウンロードできます。
 
-<download />
+<DownloadTable />
 
 ## インストール
 
@@ -18,8 +19,8 @@ icon: fa-solid fa-signs-post
 
 ## Mod のダウンロード
 
-- 1.8-1.11 のクライアントの場合 [AudioBuffer](https://www.mcbbs.net/thread-832205-1-1.html) Mod をインストール
-- 1.12.2-1.19 のクライアントの場合 [ZMusic](https://github.com/zmusic-dev/zmusic-client/releases) Mod をインストール
+- 1.8-1.11 のクライアントの場合は [AudioBuffer](https://www.mcbbs.net/thread-832205-1-1.html) Mod をインストール
+- 1.12.2-1.19 のクライアントの場合は [ZMusic](https://github.com/zmusic-dev/zmusic-client/releases) Mod をインストール
 
 ## Mod のインストール
 
@@ -28,5 +29,5 @@ icon: fa-solid fa-signs-post
 
 ## フィードバック
 
-- [Github](https://github.com/zmusic-dev/zmusic-server) で Issues を提出
+- [GitHub](https://github.com/zmusic-dev/zmusic-server) で Issues を提出
 - Discord: [discord.gg/twQgJNufYn](https://discord.gg/twQgJNufYn) でフィードバック

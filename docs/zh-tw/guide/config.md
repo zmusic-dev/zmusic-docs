@@ -1,9 +1,10 @@
 ---
 title: 設定檔
-icon: fa-solid fa-gear
 ---
 
-<v4-warning />
+# 設定檔
+
+<V4Warning />
 
 TOML 規範說明請參考 [toml.io](https://toml.io/cn/)
 

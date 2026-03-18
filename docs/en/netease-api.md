@@ -1,27 +1,26 @@
 ---
 title: Netease Cloud Music API
-icon: fa-solid fa-music
 ---
 
-- [Project Repository](https://gitlab.com/Binaryify/neteasecloudmusicapi)
+# Netease Cloud Music API
 
 ## Public Servers
 
 ::: warning
-**Please use public servers with caution for login operations.**
+**Be careful when using public servers to perform login operations.**
 
-**We are not responsible for any account theft or other issues caused by using public servers.**
+**We are not responsible for account theft or other issues caused by public servers.**
 :::
 
-<netease-api />
+<NeteaseApiTable />
 
 ::: warning
-If you encounter login issues with self-hosted API.
+If you cannot log in when using a self-hosted API,
 
-Please make sure you follow the deployment guide below and change the login method to email login.
+please make sure you followed the deployment guide below and switched the login method to email login.
 :::
 
-## Configuration Location
+## Replace Location
 
 ### V4
 
@@ -39,21 +38,21 @@ netease-link = "https://ncm.zhenxin.me"
   "api": {
     /// Netease Cloud Music API address
     ///
-    /// Using open source project NeteaseCloudMusicApi
-    /// Recommended to self-host, requires Node.js environment
-    /// Repository: https://github.com/Binaryify/NeteaseCloudMusicApi
+    /// Uses the open-source project NeteaseCloudMusicApi
+    /// Self-hosting is recommended and requires Node.js
+    /// URL: https://github.com/Binaryify/NeteaseCloudMusicApi
     "netease": "https://ncm.zhenxin.me"
   },
 ```
 
 ## Deployment
 
-Before deployment, make sure you have the following environment installed
+Make sure the following software is installed before deployment:
 
 - [Git](https://git-scm.com/download)
 - [Node.js](https://nodejs.org/)
 
-1. Get the code
+1. Get the source code
 
 ```shell
 wget https://registry.npmmirror.com/NeteaseCloudMusicApi/-/NeteaseCloudMusicApi-4.27.0.tgz
@@ -68,13 +67,13 @@ cd NeteaseCloudMusicApi
 npm install
 ```
 
-3. Run
+3. Run the server
 
 ```shell
 node app.js
 ```
 
-4. Custom port
+4. Customize the port
 
 4.1 Linux
 

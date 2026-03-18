@@ -1,32 +1,33 @@
 ---
 title: Getting Started
-icon: fa-solid fa-signs-post
 ---
 
-<v4-warning />
+# Getting Started
+
+<V4Warning />
 
 ## Download
 
-You can download the latest version of ZMusic plugin/mod from the following sources.
+You can download the latest ZMusic plugin/mod from the following channels.
 
-<download />
+<DownloadTable />
 
-## Installation
+## Install
 
-- Place the downloaded jar file in the server's `plugins` directory
-- Restart/run the server
+- Put the downloaded `.jar` file into the server `plugins` directory
+- Restart or start the server
 
-## Download Mod
+## Download the Mod
 
-- For 1.8-1.11 clients, install [AudioBuffer](https://www.mcbbs.net/thread-832205-1-1.html) Mod
-- For 1.12.2-1.19 clients, install [ZMusic](https://github.com/zmusic-dev/zmusic-client/releases) Mod
+- For Minecraft 1.8-1.11 clients, install the [AudioBuffer](https://www.mcbbs.net/thread-832205-1-1.html) mod
+- For Minecraft 1.12.2-1.19 clients, install the [ZMusic](https://github.com/zmusic-dev/zmusic-client/releases) mod
 
-## Install Mod
+## Install the Mod
 
-- Place the downloaded jar file in the client's `mods` directory
-- Restart/run the client
+- Put the downloaded `.jar` file into the client `mods` directory
+- Restart or start the client
 
 ## Feedback
 
 - Submit issues on [GitHub](https://github.com/zmusic-dev/zmusic-server)
-- Join our Discord: [https://discord.gg/twQgJNufYn](https://discord.gg/twQgJNufYn)
+- Join Discord: [discord.gg/twQgJNufYn](https://discord.gg/twQgJNufYn)

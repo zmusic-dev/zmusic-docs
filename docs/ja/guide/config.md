@@ -1,11 +1,12 @@
 ---
 title: 設定ファイル
-icon: fa-solid fa-gear
 ---
 
-<v4-warning />
+# 設定ファイル
 
-TOML 仕様については [toml.io](https://toml.io/cn/) をご参照ください
+<V4Warning />
+
+TOML 仕様については [toml.io](https://toml.io/cn/) をご参照ください。
 
 ```toml
 # デバッグモードを有効にするかどうか

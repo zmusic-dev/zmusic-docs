@@ -1,12 +1,13 @@
 ---
 title: Permissions
-icon: fa-solid fa-shield-halved
 ---
 
-<v4-warning />
+# Permissions
+
+<V4Warning />
 
 ::: info
-This feature is under development, please stay tuned.
+This feature is still under development.
 
-To configure permissions, please refer to [V2 Permission Documentation](/en/v2/#permissions).
+For permission configuration, please refer to the [V2 permission documentation](/en/v2/#permissions).
 :::

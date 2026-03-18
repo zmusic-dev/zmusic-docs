@@ -1,9 +1,8 @@
 ---
 title: NetEase Cloud Music API
-icon: fa-solid fa-music
 ---
 
-- [プロジェクトURL](https://gitlab.com/Binaryify/neteasecloudmusicapi)
+# NetEase Cloud Music API
 
 ## パブリックサーバー
 
@@ -13,7 +12,7 @@ icon: fa-solid fa-music
 **パブリックサーバーの使用によるアカウント盗難などの問題については責任を負いません。**
 :::
 
-<netease-api />
+<NeteaseApiTable />
 
 ::: warning
 自己構築した API でログインできない問題が発生した場合。
