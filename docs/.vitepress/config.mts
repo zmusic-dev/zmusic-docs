@@ -212,7 +212,6 @@ export default defineConfig({
     hostname: 'https://zmusic.zhenxin.me'
   },
   themeConfig: {
-    logoLink: '/',
     socialLinks: [
       { icon: 'github', link: 'https://github.com/zmusic-dev/zmusic-docs' }
     ],
@@ -283,6 +282,7 @@ export default defineConfig({
       title: 'ZMusic 使用文档',
       description: 'ZMusic - 多功能、易上手的 Minecraft 跨平台点歌插件',
       themeConfig: {
+        logoLink: withLocaleBase('root'),
         nav: zhNav,
         sidebar: zhSidebar,
         outline: false,
@@ -303,6 +303,7 @@ export default defineConfig({
       title: 'ZMusic Docs',
       description: 'ZMusic - Versatile, easy-to-use cross-platform music player plugin for Minecraft',
       themeConfig: {
+        logoLink: withLocaleBase('en'),
         nav: enNav,
         sidebar: enSidebar,
         outline: false,
@@ -323,6 +324,7 @@ export default defineConfig({
       title: 'ZMusic 使用文件',
       description: 'ZMusic - 多功能、易上手的 Minecraft 跨平台點歌插件',
       themeConfig: {
+        logoLink: withLocaleBase('zh-tw'),
         nav: zhTwNav,
         sidebar: zhTwSidebar,
         outline: false,
@@ -343,6 +345,7 @@ export default defineConfig({
       title: 'ZMusic ドキュメント',
       description: 'ZMusic - 多機能で使いやすい Minecraft クロスプラットフォーム音楽再生プラグイン',
       themeConfig: {
+        logoLink: withLocaleBase('ja'),
         nav: jaNav,
         sidebar: jaSidebar,
         outline: false,
