@@ -71,6 +71,7 @@
         <p>此API由Sophia在增强版基础上进行闭源二次开发。</p>
         <p>已内置网易云SVIP解析账号 可直接解析网易VIP歌曲。</p>
         <p>仅支持ZMusic使用 其他接口已做封堵。</p>
+        <p>此API无法使用/zmusic login。</p>
         <p>禁止违规使用此账号 无法解析联系QQ254164579。</p>
       </div>
       <div class="data-table data-table-mobile data-table-api">
