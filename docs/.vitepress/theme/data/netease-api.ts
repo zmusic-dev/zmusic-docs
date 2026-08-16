@@ -77,6 +77,19 @@ const neteaseApiList: NeteaseApiData[] = [
       name: '真心',
       link: 'https://github.com/RealHeart'
     }
+  },
+  {
+    link: 'https://ncm.landdy.cn',
+    type: 'enhanced',
+    location: {
+      '/': '全球',
+      '/en/': 'Global',
+      '/ja/': 'グローバル'
+    },
+    provider: {
+      name: 'Sophia',
+      link: 'https://github.com/7ooki'
+    }
   }
 ]
 
