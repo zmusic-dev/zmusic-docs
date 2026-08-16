@@ -65,9 +65,9 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref, type Ref } from 'vue'
 import { useRoute } from 'vitepress'
-import neteaseApiList from '../data/netease-api'
+import neteaseApiList, { type NeteaseApiData } from '../data/netease-api'
 import { getSiteLocale } from '../utils/i18n'
 
 const route = useRoute()
@@ -125,13 +125,21 @@ const getApiVersion = async (link: string, isEnhanced: boolean): Promise<string>
   }
 }
 
-onMounted(async () => {
-  standardVersions.value = await Promise.all(
-    standardApis.value.map((api) => getApiVersion(api.link, false))
-  )
-  enhancedVersions.value = await Promise.all(
-    enhancedApis.value.map((api) => getApiVersion(api.link, true))
-  )
+const loadApiVersions = (
+  apis: NeteaseApiData[],
+  versions: Ref<string[]>,
+  isEnhanced: boolean
+) => {
+  for (const [index, api] of apis.entries()) {
+    void getApiVersion(api.link, isEnhanced).then((version) => {
+      versions.value[index] = version
+    })
+  }
+}
+
+onMounted(() => {
+  loadApiVersions(standardApis.value, standardVersions, false)
+  loadApiVersions(enhancedApis.value, enhancedVersions, true)
 })
 </script>
 
