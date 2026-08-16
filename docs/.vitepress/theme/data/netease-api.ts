@@ -1,4 +1,4 @@
-export type NeteaseApiType = 'standard' | 'enhanced' | 'enhanced-vip'
+export type NeteaseApiType = 'standard' | 'enhanced'
 
 export interface NeteaseApiData {
   link: string
@@ -78,14 +78,13 @@ const neteaseApiList: NeteaseApiData[] = [
       link: 'https://github.com/RealHeart'
     }
   },
-  // 增强VIP版 (NeteaseCloudMusicApi-Enhanced-VIP 二次开发 闭源)
   {
     link: 'https://ncm.landdy.cn',
-    type: 'enhanced-vip',
+    type: 'enhanced',
     location: {
       '/': '全球',
       '/en/': 'Global',
-      '/ja/': '全球'
+      '/ja/': 'グローバル'
     },
     provider: {
       name: 'Sophia',
